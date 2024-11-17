@@ -1,0 +1,54 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.23970039932155723 0.4758303065398807 0.846244195219825 1.073894483706329
+  position -1.2766155575616622 -1.7485907092974304 1.157962954865651
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2 2
+}
+E-puck {
+  translation -0.610992 1.56136e-08 0.000211635
+  rotation -6.691446312647145e-07 0.9999999996958833 -2.4653309380834142e-05 0.0014504017394399698
+  controller "my_radar_controller"
+  turretSlot [
+    Radar {
+      minRange 0.5
+      maxRange 10
+      horizontalFieldOfView 1.57
+    }
+  ]
+}
+Solid {
+  translation 0 0.07 0.01
+  children [
+    WoodenBox {
+      translation 0.32 0.44 0.1
+      size 0.2 0.2 0.2
+    }
+  ]
+  radarCrossSection 1
+}
+Solid {
+  translation 0.3 -0.86 0.01
+  children [
+    WoodenBox {
+      translation 0.32 0.44 0.1
+      size 0.2 0.2 0.2
+    }
+  ]
+  name "solid(1)"
+  radarCrossSection 1
+}
